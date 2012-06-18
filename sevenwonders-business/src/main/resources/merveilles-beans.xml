@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-autowire="byType">
+
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+  
+	<bean id="merveille1" class="fr.mathieujjava.sevenwonders.Merveille">
+		<constructor-arg name="nomEn" value="The Colossus of Rhodes" />
+		<constructor-arg name="nomFr" value="Le Colosse de Rhodes" />
+		<constructor-arg name="face" value="1" />
+		<constructor-arg name="texte" value="1er étage : 3 points de victoire; 2d étage : Fournit 2 puissance militaire; 3ème étage : 7 points de victoire" />
+		<constructor-arg name="ressource" value="Minerai" />
+		<constructor-arg name="cout" value="B,BB,BBB" />
+	</bean>
+	
+	
+	<bean id="merveilles" class="fr.mathieujjava.sevenwonders.Merveille" />
+	
+</beans>

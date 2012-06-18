@@ -9,12 +9,15 @@ import fr.mathieujjava.sevenwonders.enums.Ressource;
 public class ChoixAchatRessources {
 	Integer piecesPourBanque = 0;
 	
-	List<Ressource> ressourcesDroite = new ArrayList<Ressource>();
-	List<Ressource> ressourcesGauche = new ArrayList<Ressource>();
-	List<Ressource> ressourcesSoi = new ArrayList<Ressource>();
-	
-	Integer piecesPourGauche = 0;
 	Integer piecesPourDroite = 0;
+
+  Integer piecesPourGauche = 0;
+  
+	List<Ressource> ressourcesDroite = new ArrayList<Ressource>();
+	
+	List<Ressource> ressourcesGauche = new ArrayList<Ressource>();
+	
+	List<Ressource> ressourcesSoi = new ArrayList<Ressource>();
 	
 	public ChoixAchatRessources addAchat(Place place,  Ressource ressource){
 		if (place == Place.Gauche) {
@@ -26,8 +29,7 @@ public class ChoixAchatRessources {
 		}
 		return this;
 	}
-
-
+	
 	public ChoixAchatRessources clone(){
 		ChoixAchatRessources res = new ChoixAchatRessources();
 		for (Ressource ressource : ressourcesGauche){
@@ -41,4 +43,17 @@ public class ChoixAchatRessources {
 		}
 		return res;
 	}
+	
+	
+	public void setPiecesPourBanque(Integer piecesPourBanque) {
+    this.piecesPourBanque = piecesPourBanque;
+  }
+
+  public void setPiecesPourDroite(Integer piecesPourDroite) {
+    this.piecesPourDroite = piecesPourDroite;
+  }
+
+  public void setPiecesPourGauche(Integer piecesPourGauche) {
+    this.piecesPourGauche = piecesPourGauche;
+  }
 }

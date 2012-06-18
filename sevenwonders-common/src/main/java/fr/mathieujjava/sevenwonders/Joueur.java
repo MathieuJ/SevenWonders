@@ -80,4 +80,8 @@ public class Joueur {
 	public void setMain(List<Carte> main) {
 		this.main = main;
 	}
+	
+	public void ajouteMedaille(Medaille medaille) {
+	  listeMedailles.add(medaille);
+	}
 }
