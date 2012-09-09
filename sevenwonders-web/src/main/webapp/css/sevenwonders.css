@@ -1,0 +1,41 @@
+.merveille {
+	border: 3px solid black;
+	height: 200px;
+	width: 470px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.merveille h3 {
+	background-color : hsla(80, 00%, 100%, 0.7);
+	text-align: center;
+}
+
+.merveille .cout {
+	text-align: center;
+	margin:0px;
+}
+
+.merveille .cout .img {
+	margin: 1px;
+}
+
+.merveille .texte {
+	background-color : white;
+	
+}
+
+.etage {
+	border: 3px solid black;
+	height: 60px;
+	width: 150px;
+	float: left;
+	background-color:hsla(120, 100%, 50%, 0.4);
+	
+	padding-top: 5px;
+}
+
+.etage .construit {
+	background-color: grey;
+}
