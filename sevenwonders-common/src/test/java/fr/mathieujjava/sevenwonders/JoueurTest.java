@@ -1,6 +1,6 @@
 package fr.mathieujjava.sevenwonders;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -17,9 +17,7 @@ public class JoueurTest {
             1,
             "CC",
             Ressource.Minerai,
-            new Cout(0, Ressource.Bois, Ressource.Bois),
-            new Cout(0, Ressource.Brique, Ressource.Brique, Ressource.Brique),
-            new Cout(0, Ressource.Minerai, Ressource.Minerai, Ressource.Minerai, Ressource.Minerai));
+            "BB,QQ,MMMM", "colosse.jpg");
 
     Joueur joueur = new Joueur(merveille);
     assertEquals(0, joueur.getListeMedailles().size());
@@ -29,5 +27,4 @@ public class JoueurTest {
     joueur.modifieNombrePieces(4);
     assertEquals(7, joueur.getNombrePieces().intValue());
   }
-
 }

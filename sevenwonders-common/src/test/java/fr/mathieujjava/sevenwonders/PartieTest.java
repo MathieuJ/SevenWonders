@@ -13,10 +13,10 @@ public class PartieTest {
 
   @Before
   public void setUp() {
-    Merveille merveilleA = new Merveille("A", "A", 1, "", null, new Cout[0]);
-    Merveille merveilleB = new Merveille("B", "B", 1, "", null, new Cout[0]);
-    Merveille merveilleC = new Merveille("C", "C", 1, "", null, new Cout[0]);
-    Merveille merveilleD = new Merveille("D", "D", 1, "", null, new Cout[0]);
+    Merveille merveilleA = new Merveille("A", "A", 1, "", null, null, null);
+    Merveille merveilleB = new Merveille("B", "B", 1, "", null, null, null);
+    Merveille merveilleC = new Merveille("C", "C", 1, "", null, null, null);
+    Merveille merveilleD = new Merveille("D", "D", 1, "", null, null, null);
     partie = new Partie();
     partie.addJoueur(joueurA = new Joueur(merveilleA));
     partie.addJoueur(joueurB = new Joueur(merveilleB));
@@ -27,7 +27,7 @@ public class PartieTest {
 
   @Test
   public void testConstructeurs() {
-    assertNotNull(partie.getListeJoueur());
+    assertNotNull(partie.getListeJoueurs());
     assertEquals(0, joueurA.getPlace().intValue());
     assertEquals(1, joueurB.getPlace().intValue());
     assertEquals(2, joueurC.getPlace().intValue());

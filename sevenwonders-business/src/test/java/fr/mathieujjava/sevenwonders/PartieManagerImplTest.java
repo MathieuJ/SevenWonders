@@ -2,6 +2,10 @@ package fr.mathieujjava.sevenwonders;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,9 +21,11 @@ import fr.mathieujjava.sevenwonders.enums.TypeCarte;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"/conf-context.xml"})
+@ContextConfiguration(locations={"/conf-context.xml", "/merveilles-context.xml"})
 public class PartieManagerImplTest {
-
+  @Resource(name="listeMerveilles")
+  List<Merveille> listeMerveilles;
+  
   private Partie partie;
 
   private Joueur joueurA, joueurB, joueurC, joueurD;
@@ -32,7 +38,7 @@ public class PartieManagerImplTest {
   @Before
   public void setUp() {
     //partieManager = new PartieManagerImpl();
-    Merveille merveilleA = new Merveille("A", "A", 1, "", null, new Cout[0]);
+    Merveille merveilleA =listeMerveilles.get(0);
     partie = new Partie();
     partie.addJoueur(joueurA = new Joueur(merveilleA));
     partie.addJoueur(joueurB = new Joueur(merveilleA));
@@ -66,14 +72,14 @@ public class PartieManagerImplTest {
   }
   
   @Test
-  public void testPaieCout1() {
+  public void testPaieCout1() throws Exception {
     ChoixAchatRessources choix = new ChoixAchatRessources();
     partieManager.paieCout(partie,  joueurA, choix);
     assertEquals(3, joueurA.getNombrePieces().intValue());
   }
   
   @Test
-  public void testPaieCout2() {
+  public void testPaieCout2() throws Exception {
     ChoixAchatRessources choix = new ChoixAchatRessources();
     choix.setPiecesPourBanque(2);
     partieManager.paieCout(partie,  joueurA, choix);
@@ -81,7 +87,7 @@ public class PartieManagerImplTest {
   }
   
   @Test
-  public void testPaieCout3() {
+  public void testPaieCout3() throws Exception {
     ChoixAchatRessources choix = new ChoixAchatRessources();
     choix.setPiecesPourDroite(2);
     partieManager.paieCout(partie,  joueurA, choix);
@@ -91,7 +97,7 @@ public class PartieManagerImplTest {
   }
   
   @Test
-  public void testPaieCout4() {
+  public void testPaieCout4() throws Exception {
     // 10 pièces en tout
     joueurA.modifieNombrePieces(7);
     ChoixAchatRessources choix = new ChoixAchatRessources();
@@ -104,7 +110,7 @@ public class PartieManagerImplTest {
   }
 
   @Test
-  public void testPaieCout() {
+  public void testPaieCout() throws Exception {
     // 14 po en tout
     joueurA.modifieNombrePieces(11);
     ChoixAchatRessources choix = new ChoixAchatRessources();

@@ -50,7 +50,17 @@ public class Joueur {
 	public List<Carte> getListeCartes() {
 		return listeCartes;
 	}
-
+	
+	public List<Carte> getListeCarte(TypeCarte type) {
+    List<Carte> l = new ArrayList<Carte>();
+    for (Carte carte : listeCartes) {
+      if (carte.getType() == type) {
+        l.add(carte);
+      }
+    }
+    return l;
+  }
+	
 	public List<Medaille> getListeMedailles() {
 		return listeMedailles;
 	}
@@ -84,4 +94,14 @@ public class Joueur {
 	public void ajouteMedaille(Medaille medaille) {
 	  listeMedailles.add(medaille);
 	}
+
+  public boolean possede(String nomParent) {
+    if (nomParent == null) return false;
+    for (Carte carte : listeCartes) {
+      if (nomParent.equals(carte.getNomEn())) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

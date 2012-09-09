@@ -6,54 +6,54 @@ import java.util.List;
 import fr.mathieujjava.sevenwonders.enums.TypeCarte;
 
 public class Partie {
-	Integer age;
+  Integer age;
 
-	Integer tour;
+  Integer tour;
 
-	List<Carte> defausse = new ArrayList<Carte>();
+  List<Carte> defausse = new ArrayList<Carte>();
 
-	List<Joueur> listeJoueur = new ArrayList<Joueur>();
+  List<Joueur> listeJoueurs = new ArrayList<Joueur>();
 
-	public Partie() {
-		age = 1;
-		tour = 1;
-	}
+  public Partie() {
+    age = 1;
+    tour = 1;
+  }
 
-	public void addJoueur(Joueur joueur) {
-		joueur.setPlace(listeJoueur.size());
-		listeJoueur.add(joueur);
-	}
+  public void addJoueur(Joueur joueur) {
+    joueur.setPlace(listeJoueurs.size());
+    listeJoueurs.add(joueur);
+  }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+  public void setAge(Integer age) {
+    this.age = age;
+  }
 
-	public void setTour(Integer tour) {
-		this.tour = tour;
-	}
+  public void setTour(Integer tour) {
+    this.tour = tour;
+  }
 
-	public Integer getAge() {
-		return age;
-	}
+  public Integer getAge() {
+    return age;
+  }
 
-	public Integer getTour() {
-		return tour;
-	}
+  public Integer getTour() {
+    return tour;
+  }
 
-	public List<Carte> getDefausse() {
-		return defausse;
-	}
+  public List<Carte> getDefausse() {
+    return defausse;
+  }
 
-	public List<Joueur> getListeJoueur() {
-		return listeJoueur;
-	}
+  public List<Joueur> getListeJoueurs() {
+    return listeJoueurs;
+  }
 
   public Joueur getJoueur(int place) {
-    return listeJoueur.get(place);
+    return listeJoueurs.get(place);
   }
 
   public int getNbJoueurs() {
-    return getListeJoueur().size();
+    return getListeJoueurs().size();
   }
 
   public Joueur getVoisinGauche(Joueur joueur) {
@@ -64,8 +64,7 @@ public class Partie {
     return getJoueur((joueur.getPlace() + 1) % getNbJoueurs());
   }
 
-  public int compteNombreCartes(Joueur joueur, TypeCarte typeCarte,
-      boolean gauche, boolean soi, boolean droite) {
+  public int compteNombreCartes(Joueur joueur, TypeCarte typeCarte, boolean gauche, boolean soi, boolean droite) {
     int i = 0;
     if (gauche) {
       i += getVoisinGauche(joueur).compteNombreCartes(typeCarte);

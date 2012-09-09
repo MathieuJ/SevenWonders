@@ -1,66 +1,68 @@
 package fr.mathieujjava.sevenwonders;
 
+import java.util.Arrays;
+import java.util.List;
+
 import fr.mathieujjava.sevenwonders.enums.Ressource;
 
-
 public class Merveille {
-  Cout coutAgeI, coutAgeII, coutAgeIII, coutAgeIV;
+  Cout[] coutsAge;
+
+  public Cout[] getCoutsAge() {
+    return coutsAge;
+  }
 
   Integer face;
   String nomEn;
   String nomFr;
   Ressource ressource;
   String texte;
+  String image;
 
-  public Merveille(){
-    
+  public Merveille() {
+
   }
-  
-  public Merveille(String nomEn, String nomFr, Integer face, String texte, Ressource ressource) {
+
+  public Merveille(String nomEn, String nomFr, Integer face, String texte, Ressource ressource, String couts, String image) {
     this.nomEn = nomEn;
     this.nomFr = nomFr;
     this.face = face;
     this.texte = texte;
     this.ressource = ressource;
-  }
+    String[] sCouts = couts.split(",");
+    coutsAge = new Cout[sCouts.length];
+    int i = 0;
+    for (String sCout : sCouts) {
+      Cout cout = new Cout(sCout);
 
-  
-  
-  public Merveille(String nomEn, String nomFr, Integer face, String texte, Ressource ressource, Cout... cout) {
-    this.nomEn = nomEn;
-    this.nomFr = nomFr;
-    this.face = face;
-    this.texte = texte;
-
-    this.ressource = ressource;
-    if (cout.length > 0) {
-      coutAgeI = cout[0];
+      System.out.println(" " + i + " " + cout);
+      coutsAge[i] = cout;
+      i++;
     }
-    if (cout.length > 1) {
-      coutAgeII = cout[1];
+    this.image = image;
+  }
+
+  /*
+   * public Merveille(String nomEn, String nomFr, Integer face, String texte,
+   * Ressource ressource, Cout... cout) { this.nomEn = nomEn; this.nomFr =
+   * nomFr; this.face = face; this.texte = texte;
+   * 
+   * this.ressource = ressource; coutsAge = cout; }
+   */
+
+  /*
+   * public Merveille(String nomEn, String nomFr, Integer face, String texte,
+   * Ressource ressource, List<Cout> couts) { this.nomEn = nomEn; this.nomFr =
+   * nomFr; this.face = face; this.texte = texte;
+   * 
+   * this.ressource = ressource; coutsAge = (Cout[]) couts.toArray(); }
+   */
+
+  public Cout getCoutAge(Integer age) throws Exception {
+    if (age > coutsAge.length) {
+      throw new Exception("Pas d'age " + age + " pour cette merveille");
     }
-    if (cout.length > 2) {
-      coutAgeIII = cout[2];
-    }
-    if (cout.length > 3) {
-      coutAgeIV = cout[3];
-    }
-  }
-
-  public Cout getCoutAgeI() {
-    return coutAgeI;
-  }
-
-  public Cout getCoutAgeII() {
-    return coutAgeII;
-  }
-
-  public Cout getCoutAgeIII() {
-    return coutAgeIII;
-  }
-
-  public Cout getCoutAgeIV() {
-    return coutAgeIV;
+    return coutsAge[age - 1];
   }
 
   public Integer getFace() {
@@ -81,6 +83,10 @@ public class Merveille {
 
   public String getTexte() {
     return texte;
+  }
+
+  public String getImage() {
+    return image;
   }
 
 }

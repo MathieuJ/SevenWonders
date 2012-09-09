@@ -3,52 +3,61 @@ package fr.mathieujjava.sevenwonders;
 import fr.mathieujjava.sevenwonders.enums.TypeCarte;
 
 public class Carte {
-	public Carte(TypeCarte type, String nomEn, String nomFr,
-			Cout cout, Carte parent, String texte) {
-		super();
-		this.parent = parent;
-		this.cout = cout;
-		this.nomEn = nomEn;
-		this.nomFr = nomFr;
-		this.texte = texte;
-		this.type = type;
-	}
-	
-	Carte parent;
+  public Carte(TypeCarte type, String nomEn, String nomFr, Cout cout, Carte parent, String texte) {
+    super();
+    this.parent = parent;
+    this.cout = cout;
+    this.nomEn = nomEn;
+    this.nomFr = nomFr;
+    this.texte = texte;
+    this.type = type;
+  }
 
-	Cout cout;
+  public Carte(TypeCarte type, String nomEn, String nomFr, String nombreJoueurRequis, Cout cout, String parent, String texte) {
+    super();
+    //this.parent = parent;
+    this.cout = cout;
+    this.nomEn = nomEn;
+    this.nomFr = nomFr;
+    this.nombreJoueurRequis = nombreJoueurRequis;
+    this.texte = texte;
+    this.type = type;
+  }
 
-	String nomEn;
+  Carte parent;
+  String nombreJoueurRequis;
+  Cout cout;
 
-	String nomFr;
+  String nomEn;
 
-	String texte;
+  String nomFr;
 
-	TypeCarte type;
+  String texte;
 
-	public Carte getParent() {
-		return parent;
-	}
+  TypeCarte type;
 
-	public Cout getCout() {
-		return cout;
-	}
+  public Carte getParent() {
+    return parent;
+  }
 
-	public String getNomEn() {
-		return nomEn;
-	}
+  public Cout getCout() {
+    return cout;
+  }
 
-	public String getNomFr() {
-		return nomFr;
-	}
+  public String getNomEn() {
+    return nomEn;
+  }
 
-	public String getTexte() {
-		return texte;
-	}
+  public String getNomFr() {
+    return nomFr;
+  }
 
-	public TypeCarte getType() {
-		return type;
-	}
-	
-	
+  public String getTexte() {
+    return texte;
+  }
+
+  public TypeCarte getType() {
+    return type;
+  }
+
 }
