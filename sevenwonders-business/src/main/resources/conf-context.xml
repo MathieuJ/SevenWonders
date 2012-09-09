@@ -7,4 +7,12 @@
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
   
 	<bean id="partieManager" class="fr.mathieujjava.sevenwonders.PartieManagerImpl" />
+	
+	<!-- <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="fr.mathieujjava.sevenwonders.Cout" value="fr.mathieujjava.sevenwonders.propertyeditor.CoutEditor" />
+			</map>
+		</property>
+	</bean> -->
 </beans>

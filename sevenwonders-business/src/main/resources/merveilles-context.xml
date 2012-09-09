@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<util:list id="listeMerveilles" value-type="fr.mathieujjava.sevenwonders.Merveille" list-class="java.util.ArrayList">
+		<bean id="merveille1" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="nomEn" value="The Colossus of Rhodes" />
+			<constructor-arg name="nomFr" value="Le Colosse de Rhodes" />
+			<constructor-arg name="face" value="1" />
+			<constructor-arg name="texte" value="1er étage : 3 points de victoire; 2d étage : Fournit 2 puissance militaire; 3ème étage : 7 points de victoire" />
+			<constructor-arg name="ressource" value="Minerai" />
+			<constructor-arg name="couts" value="BB,QQQ,MMMM" />
+			<constructor-arg name="image" value="colosse.jpg" />
+		</bean>
+
+		<bean id="merveille2" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="nomEn" value="The Lighthouse of Alexandria" />
+			<constructor-arg name="nomFr" value="Le phare d'Alexandrie" />
+			<constructor-arg name="face" value="1" />
+			<constructor-arg name="texte" value="1er étage : 3 points de victoire; 2d étage : Fournit au choix Minerai, Bois, Pierre ou Brique; 3ème étage : 7 points de victoire" />
+			<constructor-arg name="ressource" value="Verre" />
+			<constructor-arg name="couts" value="PP,MM,VV" />
+			<constructor-arg name="image" value="phare.jpg" />
+		</bean>
+
+		<bean id="merveille3" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="nomEn" value="The Temple of Artemis in Ephesus" />
+			<constructor-arg name="nomFr" value="Le temple d'Artémis à Ephèse" />
+			<constructor-arg name="face" value="1" />
+			<constructor-arg name="texte" value="1er étage : 3 points de victoire; 2d étage : Fournit 9 pièces d'or; 3ème étage : 7 points de victoire" />
+			<constructor-arg name="ressource" value="Papyrus" />
+			<constructor-arg name="couts" value="PP,MM,VV" />
+			<constructor-arg name="image" value="temple.jpg" />
+		</bean>
+
+		<bean id="merveille4" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="nomEn" value="The Hanging Gardens of Babylon" />
+			<constructor-arg name="nomFr" value="Les jardins suspendus de Babylone" />
+			<constructor-arg name="face" value="1" />
+			<constructor-arg name="texte" value="1er étage : 3 points de victoire; 2d étage : Fournit un élément scientifique au choix; 3ème étage : 7 points de victoire" />
+			<constructor-arg name="ressource" value="Brique" />
+			<constructor-arg name="couts" value="QQ,BB,VV" />
+			<constructor-arg name="image" value="jardins.jpg" />
+		</bean>
+
+		<bean id="merveille5" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="nomEn" value="The Statue of Zeus in Olympia" />
+			<constructor-arg name="nomFr" value="La statue de Zeus à Olympe" />
+			<constructor-arg name="face" value="1" />
+			<constructor-arg name="texte" value="1er étage : 3 points de victoire; 2d étage : 1 bâtiment gratuit par âge; 3ème étage : 7 points de victoire" />
+			<constructor-arg name="ressource" value="Bois" />
+			<constructor-arg name="couts" value="BB,PP,VV" />
+			<constructor-arg name="image" value="statue.jpg" />
+		</bean>
+
+		<bean id="merveille6" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="nomEn" value="The Mausoleum of Halicarnassus" />
+			<constructor-arg name="nomFr" value="Le Mausolée de Halicarnassus" />
+			<constructor-arg name="face" value="1" />
+			<constructor-arg name="texte" value="1er étage : 3 points de victoire; 2d étage : Vous pouvez jouer une fois une carte dans la défausse; 3ème étage : 7 points de victoire" />
+			<constructor-arg name="ressource" value="Tissu" />
+			<constructor-arg name="couts" value="QQ,MM,VV" />
+			<constructor-arg name="image" value="mausolee.jpg" />
+		</bean>
+
+		<bean id="merveille7" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="nomEn" value="The Pyramids of Giza" />
+			<constructor-arg name="nomFr" value="Les Pyramides de Gizeh" />
+			<constructor-arg name="face" value="1" />
+			<constructor-arg name="texte" value="1er étage : 3 points de victoire; 2d étage : 5 points de victoire; 3ème étage : 7 points de victoire" />
+			<constructor-arg name="ressource" value="Pierre" />
+			<constructor-arg name="couts" value="PP,BBB,PPPP" />
+			<constructor-arg name="image" value="pyramides.jpg" />
+		</bean>
+
+	</util:list>
+
+</beans>

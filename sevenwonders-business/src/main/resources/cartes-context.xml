@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	default-autowire="byType">
+	
+	<util:list id="listeCartesAgeI" value-type="fr.mathieujjava.sevenwonders.Carte" list-class="java.util.ArrayList">
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Lumber Yard" />
+			<constructor-arg value="Chantier" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="B" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Stone Pit" />
+			<constructor-arg value="Cavité" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="P" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Clay Pool" />
+			<constructor-arg value="Bassin argileux" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Q" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Ore Vein" />
+			<constructor-arg value="Filon" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="M" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Tree Farm" />
+			<constructor-arg value="Friche" />
+			<constructor-arg value="6" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="B / Q" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Excavation" />
+			<constructor-arg value="Excavation" />
+			<constructor-arg value="4" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="P / Q" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Clay Pit" />
+			<constructor-arg value="Fosse argileuse" />
+			<constructor-arg value="3" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="B / M" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Timber Yard" />
+			<constructor-arg value="Exploitation Forestière" />
+			<constructor-arg value="3" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="P / B" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Forest Cave" />
+			<constructor-arg value="Gisement" />
+			<constructor-arg value="5" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="B / M" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Mine" />
+			<constructor-arg value="Mine" />
+			<constructor-arg value="6" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="P / M" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Manufacture" />
+			<constructor-arg value="Loom" />
+			<constructor-arg value="Métier à tisser" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="T" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Manufacture" />
+			<constructor-arg value="Glassworks" />
+			<constructor-arg value="Verrerie" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="V" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Manufacture" />
+			<constructor-arg value="Press" />
+			<constructor-arg value="Presse" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Y" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Baths" />
+			<constructor-arg value="Bains" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="P" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="3 points" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Alter" />
+			<constructor-arg value="Autel" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="2 points" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Theater" />
+			<constructor-arg value="Théatre" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="2 points" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Pawnshop" />
+			<constructor-arg value="Prêteur sur gages" />
+			<constructor-arg value="47" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="3 points" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="East Trading Post" />
+			<constructor-arg value="Comptoir Est" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1 po pour base E" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="West Trading Post" />
+			<constructor-arg value="Comptoir Ouest" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1 po pour base O" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Marketplace" />
+			<constructor-arg value="Marché" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1 po pour manufacture EO" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Tavern" />
+			<constructor-arg value="Taverne" />
+			<constructor-arg value="457" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="5 po" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Stockade" />
+			<constructor-arg value="Palissade" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="B" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="C" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Barracks" />
+			<constructor-arg value="Caserne" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="M" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="C" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Guard Tower" />
+			<constructor-arg value="Tour de guarde" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="Q" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="C" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Apothecary" />
+			<constructor-arg value="Officine" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="T" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Math" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Workshop" />
+			<constructor-arg value="Atelier" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="V" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Ingenieur" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Scriptorium" />
+			<constructor-arg value="Scriptorium" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="Y" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Ecriture" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Sawmill" />
+			<constructor-arg value="Scierie" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="BB" />
+		</bean>
+	</util:list>
+	<util:list id="listeCartesAgeII">
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Quarry" />
+			<constructor-arg value="Carrière" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="PP" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Brickyard" />
+			<constructor-arg value="Briquetterie" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="QQ" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="MatierePremiere" />
+			<constructor-arg value="Foundary" />
+			<constructor-arg value="Fonderie" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="1" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="MM" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Manufacture" />
+			<constructor-arg value="Loom" />
+			<constructor-arg value="Métier à tisser" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="T" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Manufacture" />
+			<constructor-arg value="Glassworks" />
+			<constructor-arg value="Verrerie" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="V" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Manufacture" />
+			<constructor-arg value="Press" />
+			<constructor-arg value="Presse" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Y" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Aquaduct" />
+			<constructor-arg value="Aqueduc" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="PPP" />
+			<constructor-arg name="parent" value="Baths" />
+			<constructor-arg value="3 points" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Temple" />
+			<constructor-arg value="Temple" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="BQV" />
+			<constructor-arg name="parent" value="Alter" />
+			<constructor-arg value="3 points" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Statue" />
+			<constructor-arg value="Statue" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="MMB" />
+			<constructor-arg name="parent" value="Theater" />
+			<constructor-arg value="4 points" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Courthouse" />
+			<constructor-arg value="Tribunal" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="QQT" />
+			<constructor-arg name="parent" value="Scriptorum" />
+			<constructor-arg value="4 pts" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Forum" />
+			<constructor-arg value="Forum" />
+			<constructor-arg value="367" />
+			<constructor-arg name="cout" value="QQ" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="verre/tissu/papyrus au choix" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Caravensery" />
+			<constructor-arg value="Caravansérail" />
+			<constructor-arg value="356" />
+			<constructor-arg name="cout" value="BB" />
+			<constructor-arg name="parent" value="Marketplace" />
+			<constructor-arg value="B/M/P/Q" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Vineyard" />
+			<constructor-arg value="Vignes" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1 po par marron OSE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Bazar" />
+			<constructor-arg value="Bazar" />
+			<constructor-arg value="47" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="2p OSE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Walls" />
+			<constructor-arg value="Muraille" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="PPP" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="CC" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Stables" />
+			<constructor-arg value="Ecuries" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="MBQ" />
+			<constructor-arg name="parent" value="Apothecary" />
+			<constructor-arg value="CC" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Archery Range" />
+			<constructor-arg value="Champ de tirs" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="MBB" />
+			<constructor-arg name="parent" value="Workshop" />
+			<constructor-arg value="CC" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Training Ground" />
+			<constructor-arg value="Place d'armes" />
+			<constructor-arg value="467" />
+			<constructor-arg name="cout" value="MMB" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="CC" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Dispensary" />
+			<constructor-arg value="Dispensaire" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="MMV" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Math" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Laboratory" />
+			<constructor-arg value="Laboratoire" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent" value="Workshop" />
+			<constructor-arg value="Ingenieur" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Library" />
+			<constructor-arg value="Bibliothèque" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="PPT" />
+			<constructor-arg name="parent" value="Scriptorum" />
+			<constructor-arg value="Ecriture" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="School" />
+			<constructor-arg value="Ecole" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="BY" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Ecriture" />
+		</bean>
+	</util:list>
+	<util:list id="listeCartesAgeIII">
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Pantheon" />
+			<constructor-arg value="Panthéon" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="QQMTYV" />
+			<constructor-arg name="parent" value="Temple" />
+			<constructor-arg value="7 pts" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Gardens" />
+			<constructor-arg value="Jardins" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent" value="Statue" />
+			<constructor-arg value="5" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Townhall" />
+			<constructor-arg value="Hotel de ville" />
+			<constructor-arg value="356" />
+			<constructor-arg name="cout" value="PPMV" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="6 pts" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Palace" />
+			<constructor-arg value="Palace" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="BQMYPTV" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="8 pts" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Civil" />
+			<constructor-arg value="Senate" />
+			<constructor-arg value="Sénat" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="BBMP" />
+			<constructor-arg name="parent" value="Library" />
+			<constructor-arg value="6 pts" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Haven" />
+			<constructor-arg value="Port" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent" value="Forum" />
+			<constructor-arg value="1p 1v par marron" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Lighthouse" />
+			<constructor-arg value="Phare" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="PV" />
+			<constructor-arg name="parent" value="Caravensery" />
+			<constructor-arg value="1v 1po / Cartejaune" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Arena" />
+			<constructor-arg value="Arène" />
+			<constructor-arg value="357" />
+			<constructor-arg name="cout" value="PPM" />
+			<constructor-arg name="parent" value="Dispensary" />
+			<constructor-arg value="1v 1po / étage" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Commerce" />
+			<constructor-arg value="Chamber of Commerce" />
+			<constructor-arg value="Chambre de commerce" />
+			<constructor-arg value="46" />
+			<constructor-arg name="cout" value="QQT" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="2po / 2v par gris" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Fortificatins" />
+			<constructor-arg value="Fortifications" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="PPP" />
+			<constructor-arg name="parent" value="Walls" />
+			<constructor-arg value="CCC" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Arsenal" />
+			<constructor-arg value="Arsenal" />
+			<constructor-arg value="347" />
+			<constructor-arg name="cout" value="MPPT" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="CCC" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Siege Workshop" />
+			<constructor-arg value="Atelier de siège" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="" />
+			<constructor-arg name="parent" value="Laboratory" />
+			<constructor-arg value="CCC" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Militaire" />
+			<constructor-arg value="Circus" />
+			<constructor-arg value="Cirque" />
+			<constructor-arg value="456" />
+			<constructor-arg name="cout" value="PPPM" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="CCC" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Lodge" />
+			<constructor-arg value="Loge" />
+			<constructor-arg value="36" />
+			<constructor-arg name="cout" value="QQTY" />
+			<constructor-arg name="parent" value="Dispensary" />
+			<constructor-arg value="Math" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Observatory" />
+			<constructor-arg value="Observatoire" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="MMVY" />
+			<constructor-arg name="parent" value="Laboratory" />
+			<constructor-arg value="Ingenieur" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="University" />
+			<constructor-arg value="Université" />
+			<constructor-arg value="34" />
+			<constructor-arg name="cout" value="BBYV" />
+			<constructor-arg name="parent" value="Library" />
+			<constructor-arg value="Ecriture" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Academy" />
+			<constructor-arg value="Académie" />
+			<constructor-arg value="37" />
+			<constructor-arg name="cout" value="PPPV" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Math" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Science" />
+			<constructor-arg value="Study" />
+			<constructor-arg value="Etude" />
+			<constructor-arg value="35" />
+			<constructor-arg name="cout" value="BTY" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="Ingenieur" />
+		</bean>
+	</util:list>
+	<util:list id="listeCartesGuilde">
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Workers Guilde" />
+			<constructor-arg value="Guilde des travailleurs" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="MMQPB" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1v marron OE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Craftsmens Guilde" />
+			<constructor-arg value="Guilde des artisans" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="MMQPB" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="2v gris OE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Traders Guilde" />
+			<constructor-arg value="Guilde des commerçants" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="TYV" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1v jaune OE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Philosophers Guilde" />
+			<constructor-arg value="Guilde des philosophes" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="QQQTY" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1v vert OE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Spies Guilde" />
+			<constructor-arg value="Guilde des espions" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="QQQV" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1v rouge OE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Stategists Guilde" />
+			<constructor-arg value="Guilde des stratèges" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="MMPT" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1v -1 OE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Shiowners Guilde" />
+			<constructor-arg value="Guilde des armateurs" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="BBBTV" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1v marron gris violet soi" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Scientists Guilde" />
+			<constructor-arg value="Guilde des scientifiques" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="MMBYB" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1 science choix" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Magistrates Guilde" />
+			<constructor-arg value="Guilde des magistrats" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="TBBPB" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1v bleu OE" />
+		</bean>
+		<bean class="fr.mathieujjava.sevenwonders.Carte">
+			<constructor-arg name="type" value="Guilde" />
+			<constructor-arg value="Builders Guilde" />
+			<constructor-arg value="Guilde des bâtisseurs" />
+			<constructor-arg value="9" />
+			<constructor-arg name="cout" value="PPQQV" />
+			<constructor-arg name="parent"><null /></constructor-arg>
+			<constructor-arg name="texte" value="1v étage OSE" />
+		</bean>
+	</util:list>
+</beans>
