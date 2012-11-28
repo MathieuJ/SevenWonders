@@ -4,6 +4,7 @@
 
 	<util:list id="listeMerveilles" value-type="fr.mathieujjava.sevenwonders.Merveille" list-class="java.util.ArrayList">
 		<bean id="merveille1" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="id" value="1" />
 			<constructor-arg name="nomEn" value="The Colossus of Rhodes" />
 			<constructor-arg name="nomFr" value="Le Colosse de Rhodes" />
 			<constructor-arg name="face" value="1" />
@@ -14,6 +15,7 @@
 		</bean>
 
 		<bean id="merveille2" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="id" value="2" />
 			<constructor-arg name="nomEn" value="The Lighthouse of Alexandria" />
 			<constructor-arg name="nomFr" value="Le phare d'Alexandrie" />
 			<constructor-arg name="face" value="1" />
@@ -24,6 +26,7 @@
 		</bean>
 
 		<bean id="merveille3" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="id" value="3" />
 			<constructor-arg name="nomEn" value="The Temple of Artemis in Ephesus" />
 			<constructor-arg name="nomFr" value="Le temple d'Artémis à Ephèse" />
 			<constructor-arg name="face" value="1" />
@@ -34,6 +37,7 @@
 		</bean>
 
 		<bean id="merveille4" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="id" value="4" />
 			<constructor-arg name="nomEn" value="The Hanging Gardens of Babylon" />
 			<constructor-arg name="nomFr" value="Les jardins suspendus de Babylone" />
 			<constructor-arg name="face" value="1" />
@@ -44,6 +48,7 @@
 		</bean>
 
 		<bean id="merveille5" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="id" value="5" />
 			<constructor-arg name="nomEn" value="The Statue of Zeus in Olympia" />
 			<constructor-arg name="nomFr" value="La statue de Zeus à Olympe" />
 			<constructor-arg name="face" value="1" />
@@ -54,6 +59,7 @@
 		</bean>
 
 		<bean id="merveille6" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="id" value="6" />
 			<constructor-arg name="nomEn" value="The Mausoleum of Halicarnassus" />
 			<constructor-arg name="nomFr" value="Le Mausolée de Halicarnassus" />
 			<constructor-arg name="face" value="1" />
@@ -64,6 +70,7 @@
 		</bean>
 
 		<bean id="merveille7" class="fr.mathieujjava.sevenwonders.Merveille">
+			<constructor-arg name="id" value="7" />
 			<constructor-arg name="nomEn" value="The Pyramids of Giza" />
 			<constructor-arg name="nomFr" value="Les Pyramides de Gizeh" />
 			<constructor-arg name="face" value="1" />
