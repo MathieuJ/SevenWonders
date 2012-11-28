@@ -13,15 +13,15 @@ public class PartieTest {
 
   @Before
   public void setUp() {
-    Merveille merveilleA = new Merveille("A", "A", 1, "", null, null, null);
-    Merveille merveilleB = new Merveille("B", "B", 1, "", null, null, null);
-    Merveille merveilleC = new Merveille("C", "C", 1, "", null, null, null);
-    Merveille merveilleD = new Merveille("D", "D", 1, "", null, null, null);
+    Merveille merveilleA = new Merveille(1, "A", "A", 1, "", null, "", null);
+    Merveille merveilleB = new Merveille(2, "B", "B", 1, "", null, "", null);
+    Merveille merveilleC = new Merveille(3, "C", "C", 1, "", null, "", null);
+    Merveille merveilleD = new Merveille(4, "D", "D", 1, "", null, "", null);
     partie = new Partie();
-    partie.addJoueur(joueurA = new Joueur(merveilleA));
-    partie.addJoueur(joueurB = new Joueur(merveilleB));
-    partie.addJoueur(joueurC = new Joueur(merveilleC));
-    partie.addJoueur(joueurD = new Joueur(merveilleD));
+    partie.addJoueur(joueurA = new Joueur(merveilleA, true));
+    partie.addJoueur(joueurB = new Joueur(merveilleB, true));
+    partie.addJoueur(joueurC = new Joueur(merveilleC, true));
+    partie.addJoueur(joueurD = new Joueur(merveilleD, true));
 
   }
 

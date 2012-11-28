@@ -10,18 +10,22 @@
 
 	<P>The time on the server is ${serverTime}.</P>
 
-	<a href="nouvellePartie">Nouvelle Partie</a>
-
-	<form:form commandName="nouvellePartie" method="post"
-		action="nouvellePartie">
-		<form:hidden path="id" id="id" />
+	<form:form modelAttribute="partieForm">
 		<table>
 			<tr>
 				<td><label>Nombre de Bots</label></td>
-				<form:input path="nbBots" id="nbBots" />
+				<td>
+				<form:select path="nombreBots" id="nombreBots" >
+					<form:option value="3">3</form:option>
+					<form:option value="4">4</form:option>
+					<form:option value="5">5</form:option>
+					<form:option value="6">6</form:option>
+					<form:option value="7">7</form:option>
+				</form:select>
+				</td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="save" value="save" /></td>
+				<td><input type="submit" name="save" value="Lancer la partie" /></td>
 			</tr>
 		</table>
 	</form:form>

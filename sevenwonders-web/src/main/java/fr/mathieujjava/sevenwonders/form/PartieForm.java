@@ -1,13 +1,13 @@
 package fr.mathieujjava.sevenwonders.form;
 
 public class PartieForm {
-  Integer nombreJoueurs;
+  private Integer nombreBots;
 
-  public Integer getNombreJoueurs() {
-    return nombreJoueurs;
+  public Integer getNombreBots() {
+    return nombreBots;
   }
 
-  public void setNombreJoueurs(Integer nombreJoueurs) {
-    this.nombreJoueurs = nombreJoueurs;
+  public void setNombreBots(Integer nombreBots) {
+    this.nombreBots = nombreBots;
   }
 }

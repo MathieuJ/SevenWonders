@@ -7,51 +7,54 @@ import fr.mathieujjava.sevenwonders.enums.Medaille;
 import fr.mathieujjava.sevenwonders.enums.TypeCarte;
 
 public class Joueur {
-	Integer etageMerveille;
-	
-	Merveille merveille;
+  private Integer etageMerveille;
 
-	List<Carte> listeCartes = new ArrayList<Carte>();
+  private Merveille merveille;
 
-	List<Medaille> listeMedailles = new ArrayList<Medaille>();
+  private List<Carte> listeCartes = new ArrayList<Carte>();
 
-	List<Carte> main = new ArrayList<Carte>();
+  private List<Medaille> listeMedailles = new ArrayList<Medaille>();
 
-	Integer nombrePieces;
+  private List<Carte> main = new ArrayList<Carte>();
 
-	Integer place;
+  private Integer nombrePieces;
 
-	public Joueur(Merveille merveille) {
-		this.merveille = merveille;
-		this.nombrePieces = 3;
-		this.etageMerveille = 0;
-	}
+  private Integer place;
+  
+  private Boolean bot;
 
-	public Integer getEtageMerveille() {
-		return etageMerveille;
-	}
+  public Joueur(Merveille merveille, Boolean isBot) {
+    this.merveille = merveille;
+    this.nombrePieces = 3;
+    this.etageMerveille = 0;
+    this.bot = isBot;
+  }
 
-	public void setEtageMerveille(Integer etageMerveille) {
-		this.etageMerveille = etageMerveille;
-	}
+  public Integer getEtageMerveille() {
+    return etageMerveille;
+  }
 
-	public Integer getNombrePieces() {
-		return nombrePieces;
-	}
+  public void setEtageMerveille(Integer etageMerveille) {
+    this.etageMerveille = etageMerveille;
+  }
 
-	public void modifieNombrePieces(Integer nombrePieces) {
-		this.nombrePieces += nombrePieces;
-	}
+  public Integer getNombrePieces() {
+    return nombrePieces;
+  }
 
-	public Merveille getMerveille() {
-		return merveille;
-	}
+  public void modifieNombrePieces(Integer nombrePieces) {
+    this.nombrePieces += nombrePieces;
+  }
 
-	public List<Carte> getListeCartes() {
-		return listeCartes;
-	}
-	
-	public List<Carte> getListeCarte(TypeCarte type) {
+  public Merveille getMerveille() {
+    return merveille;
+  }
+
+  public List<Carte> getListeCartes() {
+    return listeCartes;
+  }
+
+  public List<Carte> getListeCarte(TypeCarte type) {
     List<Carte> l = new ArrayList<Carte>();
     for (Carte carte : listeCartes) {
       if (carte.getType() == type) {
@@ -60,43 +63,44 @@ public class Joueur {
     }
     return l;
   }
-	
-	public List<Medaille> getListeMedailles() {
-		return listeMedailles;
-	}
 
-	public List<Carte> getMain() {
-		return main;
-	}
-	
-	public Integer getPlace() {
-		return place;
-	}
+  public List<Medaille> getListeMedailles() {
+    return listeMedailles;
+  }
 
-	public void setPlace(int place) {
-		this.place = place;
-	}
+  public List<Carte> getMain() {
+    return main;
+  }
 
-	public int compteNombreCartes(TypeCarte typeCarte) {
-		int i = 0;
-		for (Carte carte : listeCartes) {
-			if (carte.getType() == typeCarte) {
-				i++;
-			}
-		}
-		return i;
-	}
+  public Integer getPlace() {
+    return place;
+  }
 
-	public void setMain(List<Carte> main) {
-		this.main = main;
-	}
-	
-	public void ajouteMedaille(Medaille medaille) {
-	  listeMedailles.add(medaille);
-	}
+  public void setPlace(int place) {
+    this.place = place;
+  }
+
+  public int compteNombreCartes(TypeCarte typeCarte) {
+    int i = 0;
+    for (Carte carte : listeCartes) {
+      if (carte.getType() == typeCarte) {
+        i++;
+      }
+    }
+    return i;
+  }
+
+  public void setMain(List<Carte> main) {
+    this.main = main;
+  }
+
+  public void ajouteMedaille(Medaille medaille) {
+    listeMedailles.add(medaille);
+  }
 
   public boolean possede(String nomParent) {
-    if (nomParent == null) return false;
+    if (nomParent == null)
+      return false;
     for (Carte carte : listeCartes) {
       if (nomParent.equals(carte.getNomEn())) {
         return true;
@@ -104,4 +108,21 @@ public class Joueur {
     }
     return false;
   }
+
+  @Override
+  public String toString() {
+    return "\nJoueur [etageMerveille=" + etageMerveille + ", merveille="
+        + merveille + ", nombrePieces=" + nombrePieces
+        + ", place=" + place + ",\n   listeCartes=" + listeCartes + ", listeMedailles="
+        + listeMedailles + ",\n   main=" + main + "]";
+  }
+
+  public Boolean isBot() {
+    return bot;
+  }
+
+  public void setBot(Boolean bot) {
+    this.bot = bot;
+  }
+  
 }

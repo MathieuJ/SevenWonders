@@ -11,7 +11,7 @@ public class JoueurTest {
   @Test
   public void testConstructeurs() {
     Merveille merveille =
-        new Merveille(
+        new Merveille(1, 
             "The Colossus of Rhodes",
             "Le Colosse de Rhodes",
             1,
@@ -19,7 +19,7 @@ public class JoueurTest {
             Ressource.Minerai,
             "BB,QQ,MMMM", "colosse.jpg");
 
-    Joueur joueur = new Joueur(merveille);
+    Joueur joueur = new Joueur(merveille, true);
     assertEquals(0, joueur.getListeMedailles().size());
     assertEquals(3, joueur.getNombrePieces().intValue());
     assertEquals(0, joueur.getEtageMerveille().intValue());

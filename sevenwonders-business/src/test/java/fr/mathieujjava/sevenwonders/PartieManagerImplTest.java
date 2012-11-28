@@ -21,7 +21,7 @@ import fr.mathieujjava.sevenwonders.enums.TypeCarte;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"/conf-context.xml", "/merveilles-context.xml"})
+@ContextConfiguration(locations={"/conf-context.xml", "/cartes-context.xml", "/merveilles-context.xml"})
 public class PartieManagerImplTest {
   @Resource(name="listeMerveilles")
   List<Merveille> listeMerveilles;
@@ -40,10 +40,10 @@ public class PartieManagerImplTest {
     //partieManager = new PartieManagerImpl();
     Merveille merveilleA =listeMerveilles.get(0);
     partie = new Partie();
-    partie.addJoueur(joueurA = new Joueur(merveilleA));
-    partie.addJoueur(joueurB = new Joueur(merveilleA));
-    partie.addJoueur(joueurC = new Joueur(merveilleA));
-    partie.addJoueur(joueurD = new Joueur(merveilleA));
+    partie.addJoueur(joueurA = new Joueur(merveilleA, true));
+    partie.addJoueur(joueurB = new Joueur(merveilleA, true));
+    partie.addJoueur(joueurC = new Joueur(merveilleA, true));
+    partie.addJoueur(joueurD = new Joueur(merveilleA, true));
     joueurA.getMain().add(carteScierie = new Carte(TypeCarte.MatierePremiere, "Sawmill", "Scierie", new Cout(1), null, "Fournit 2 bois"));
     joueurA.getMain().add(new Carte(TypeCarte.Science, "Library", "Bibliothèque", new Cout(0, Ressource.Pierre, Ressource.Pierre, Ressource.Tissu), null, "Ecriture"));
     carteUniversite = new Carte(TypeCarte.Science, "University", "Université", new Cout(0, Ressource.Bois, Ressource.Bois, Ressource.Papyrus, Ressource.Verre), null, "Ecriture");
@@ -152,5 +152,33 @@ public class PartieManagerImplTest {
     Mockito.when(mockedJoueur.getMerveille()).thenReturn(mockedMerveille);
     Mockito.when(mockedJoueur.getEtageMerveille()).thenReturn(2);
     assertEquals(2, partieManager.calculePuissanceMilitaire(partie, mockedJoueur));
+  }
+  
+  @Test
+  public void testDistribution() {
+    Partie partie = new Partie();
+    partieManager.initPartie(partie, 3);
+    assertEquals(7, partie.getJoueur(0).getMain().size());
+    assertEquals(7, partie.getJoueur(1).getMain().size());
+    assertEquals(7, partie.getJoueur(2).getMain().size());
+    
+    partie = new Partie();
+    partieManager.initPartie(partie, 5);
+    assertEquals(7, partie.getJoueur(0).getMain().size());
+    assertEquals(7, partie.getJoueur(1).getMain().size());
+    assertEquals(7, partie.getJoueur(2).getMain().size());
+    assertEquals(7, partie.getJoueur(3).getMain().size());
+    assertEquals(7, partie.getJoueur(4).getMain().size());
+    
+    partie = new Partie();
+    partieManager.initPartie(partie, 7);
+    assertEquals(7, partie.getJoueur(0).getMain().size());
+    assertEquals(7, partie.getJoueur(1).getMain().size());
+    assertEquals(7, partie.getJoueur(2).getMain().size());
+    assertEquals(7, partie.getJoueur(3).getMain().size());
+    assertEquals(7, partie.getJoueur(4).getMain().size());
+    assertEquals(7, partie.getJoueur(5).getMain().size());
+    assertEquals(7, partie.getJoueur(6).getMain().size());
+    
   }
 }

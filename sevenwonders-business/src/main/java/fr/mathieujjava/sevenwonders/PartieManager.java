@@ -14,4 +14,10 @@ public interface PartieManager {
   public int[] comptePoints(Partie partie);
 
   public void initPartie(Partie partie, Integer nombreJoueurs);
+  
+  public void distribueCartes(Partie partie);
+  
+  public void effectueActionJoueurEtBots(Partie partie, Action actionJoueur);
+  
+  public void finitTour(Partie partie);
 }

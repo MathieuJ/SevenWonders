@@ -6,9 +6,9 @@ import java.util.List;
 import fr.mathieujjava.sevenwonders.enums.Ressource;
 
 public class Cout {
-  List<Ressource> listeRessources = new ArrayList<Ressource>();
+  private List<Ressource> listeRessources = new ArrayList<Ressource>();
 
-  Integer prix = 0;
+  private Integer prix = 0;
 
   public Cout(String sCout) {
     System.out.println("ON FAIT : " + sCout);
@@ -105,7 +105,20 @@ public class Cout {
     }
   }
 
+  public boolean contient(Ressource ressource) {
+    return listeRessources.contains(ressource);
+  }
+  
   public void ajoute(Ressource ressource) {
     listeRessources.add(ressource);
   }
+  
+  public Cout clone() {
+    Cout cout = new Cout(getPrix());
+    for (Ressource ressource : getListeRessources()) {
+      cout.ajoute(ressource);
+    }
+    return cout;
+  }
+
 }

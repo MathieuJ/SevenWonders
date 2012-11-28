@@ -6,13 +6,13 @@ import java.util.List;
 import fr.mathieujjava.sevenwonders.enums.TypeCarte;
 
 public class Partie {
-  Integer age;
+  private Integer age;
 
-  Integer tour;
+  private Integer tour;
 
-  List<Carte> defausse = new ArrayList<Carte>();
+  private List<Carte> defausse = new ArrayList<Carte>();
 
-  List<Joueur> listeJoueurs = new ArrayList<Joueur>();
+  private List<Joueur> listeJoueurs = new ArrayList<Joueur>();
 
   public Partie() {
     age = 1;
@@ -64,7 +64,8 @@ public class Partie {
     return getJoueur((joueur.getPlace() + 1) % getNbJoueurs());
   }
 
-  public int compteNombreCartes(Joueur joueur, TypeCarte typeCarte, boolean gauche, boolean soi, boolean droite) {
+  public int compteNombreCartes(Joueur joueur, TypeCarte typeCarte,
+      boolean gauche, boolean soi, boolean droite) {
     int i = 0;
     if (gauche) {
       i += getVoisinGauche(joueur).compteNombreCartes(typeCarte);
@@ -84,6 +85,16 @@ public class Partie {
       getJoueur(i).setMain(getJoueur(i + 1).getMain());
     }
     getJoueur(getNbJoueurs() - 1).setMain(l1);
+  }
+
+  @Override
+  public String toString() {
+    return "Partie [age=" + age + ", tour=" + tour + ", defausse=" + defausse
+        + ", listeJoueurs=" + listeJoueurs + "]";
+  }
+
+  public void incrementeTour() {
+    tour++;
   }
 
 }

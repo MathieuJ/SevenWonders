@@ -3,13 +3,13 @@ package fr.mathieujjava.sevenwonders;
 import fr.mathieujjava.sevenwonders.enums.TypeAction;
 
 public class Action {
-  Joueur joueur;
+  private Joueur joueur;
 
-  TypeAction typeAction;
+  private TypeAction typeAction;
 
-  Carte carte;
+  private Carte carte;
 
-  ChoixAchatRessources choixAchatRessources;
+  private ChoixAchatRessources choixAchatRessources;
 
   public ChoixAchatRessources getChoixAchatRessources() {
     return choixAchatRessources;
@@ -22,7 +22,8 @@ public class Action {
     this.carte = carte;
   }
 
-  public Action(Joueur joueur, TypeAction typeAction, Carte carte, ChoixAchatRessources choixAchatRessources) {
+  public Action(Joueur joueur, TypeAction typeAction, Carte carte,
+      ChoixAchatRessources choixAchatRessources) {
     super();
     this.joueur = joueur;
     this.typeAction = typeAction;
@@ -40,6 +41,13 @@ public class Action {
 
   public Joueur getJoueur() {
     return joueur;
+  }
+
+  @Override
+  public String toString() {
+    return "Action [joueur=" + joueur.getPlace() + ", typeAction=" + typeAction
+        + ", carte=" + carte + ", choixAchatRessources=" + choixAchatRessources
+        + "]";
   }
 
 }

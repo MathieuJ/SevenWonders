@@ -24,17 +24,19 @@ public class Carte {
     this.type = type;
   }
 
-  Carte parent;
-  String nombreJoueurRequis;
-  Cout cout;
+  private Carte parent;
+  
+  private String nombreJoueurRequis;
+  
+  private Cout cout;
 
-  String nomEn;
+  private String nomEn;
 
-  String nomFr;
+  private String nomFr;
 
-  String texte;
+  private String texte;
 
-  TypeCarte type;
+  private TypeCarte type;
 
   public Carte getParent() {
     return parent;
@@ -58,6 +60,15 @@ public class Carte {
 
   public TypeCarte getType() {
     return type;
+  }
+
+  public String getNombreJoueurRequis() {
+    return nombreJoueurRequis;
+  }
+
+  @Override
+  public String toString() {
+    return "Carte [" + nomFr + "-" + texte + "]";
   }
 
 }
