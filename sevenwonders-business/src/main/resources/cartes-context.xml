@@ -11,7 +11,7 @@
 			<constructor-arg value="34" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="B" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/brique.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -20,7 +20,7 @@
 			<constructor-arg value="35" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="P" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/pierre.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -29,7 +29,7 @@
 			<constructor-arg value="35" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="Q" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/brique.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -38,7 +38,7 @@
 			<constructor-arg value="34" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="M" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/minerai.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -47,7 +47,7 @@
 			<constructor-arg value="6" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="B / Q" />
+			<constructor-arg name="texte" value="&lt;img src='img/bois.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/brique.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -56,7 +56,7 @@
 			<constructor-arg value="4" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="P / Q" />
+			<constructor-arg name="texte" value="&lt;img src='img/pierre.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/brique.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -65,7 +65,7 @@
 			<constructor-arg value="3" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="B / M" />
+			<constructor-arg name="texte" value="&lt;img src='img/bois.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/minerai.jpg' height='32px' width='32px'/&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -74,7 +74,7 @@
 			<constructor-arg value="3" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="P / B" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/pierre.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/bois.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -83,7 +83,7 @@
 			<constructor-arg value="5" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="B / M" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/bois.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/minerai.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -101,7 +101,7 @@
 			<constructor-arg value="36" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="T" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/tissu.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Manufacture" />
@@ -110,7 +110,7 @@
 			<constructor-arg value="36" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="V" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/verre.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Manufacture" />
@@ -119,7 +119,7 @@
 			<constructor-arg value="36" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="Y" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/papyrus.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Civil" />
@@ -247,6 +247,8 @@
 			<constructor-arg name="parent"><null /></constructor-arg>
 			<constructor-arg name="texte" value="Ecriture" />
 		</bean>
+	</util:list>
+	<util:list id="listeCartesAgeII">
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
 			<constructor-arg value="Sawmill" />
@@ -254,10 +256,8 @@
 			<constructor-arg value="34" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="BB" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/bois.jpg' height='32px' width='32px' /&gt;&lt;img src='img/bois.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
-	</util:list>
-	<util:list id="listeCartesAgeII">
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
 			<constructor-arg value="Quarry" />
@@ -265,7 +265,7 @@
 			<constructor-arg value="34" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="PP" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/pierre.jpg' height='32px' width='32px' /&gt;&lt;img src='img/pierre.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -274,7 +274,7 @@
 			<constructor-arg value="34" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="QQ" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/brique.jpg' height='32px' width='32px' /&gt;&lt;img src='img/brique.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="MatierePremiere" />
@@ -283,7 +283,7 @@
 			<constructor-arg value="34" />
 			<constructor-arg name="cout" value="1" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="MM" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/minerai.jpg' height='32px' width='32px' /&gt;&lt;img src='img/minerai.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Manufacture" />
@@ -292,7 +292,7 @@
 			<constructor-arg value="35" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="T" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/tissu.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Manufacture" />
@@ -301,7 +301,7 @@
 			<constructor-arg value="35" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="V" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/verre.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Manufacture" />
@@ -310,7 +310,7 @@
 			<constructor-arg value="35" />
 			<constructor-arg name="cout" value="" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="Y" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/papyrus.jpg' height='32px' width='32px' /&gt;" />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Civil" />
@@ -355,7 +355,7 @@
 			<constructor-arg value="367" />
 			<constructor-arg name="cout" value="QQ" />
 			<constructor-arg name="parent"><null /></constructor-arg>
-			<constructor-arg name="texte" value="verre/tissu/papyrus au choix" />
+			<constructor-arg name="texte" value="Fournit &lt;img src='img/verre.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/tissu.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/papyrus.jpg' height='32px' width='32px' /&gt; " />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Commerce" />
@@ -364,7 +364,7 @@
 			<constructor-arg value="356" />
 			<constructor-arg name="cout" value="BB" />
 			<constructor-arg name="parent" value="Marketplace" />
-			<constructor-arg value="B/M/P/Q" />
+			<constructor-arg value="Fournit &lt;img src='img/bois.jpg' height='32px' width='32px' /&gt; &lt;img src='img/minerai.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/pierre.jpg' height='32px' width='32px' /&gt; / &lt;img src='img/brique.jpg' height='32px' width='32px' /&gt; " />
 		</bean>
 		<bean class="fr.mathieujjava.sevenwonders.Carte">
 			<constructor-arg name="type" value="Commerce" />
