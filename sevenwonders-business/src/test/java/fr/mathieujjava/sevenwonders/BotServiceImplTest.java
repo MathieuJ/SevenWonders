@@ -41,11 +41,17 @@ public class BotServiceImplTest {
 
   @Test
   public void testPaiementBasique() {
-    partie.getJoueur(1).setMerveille(listeMerveilles.get(0));
-    assertEquals(partie.getJoueur(0).getMerveille().getId(), new Integer(1));
+   
+    Merveille m = null;
+    for (Merveille merveille : listeMerveilles) {
+      if (merveille.getId().equals(1)) m = merveille;
+    }
+    partie.getJoueur(1).setMerveille(m);
+    
+    assertEquals(partie.getJoueur(1).getMerveille().getId(), new Integer(1));
     Carte carte = new Carte(TypeCarte.Civil, "caserne", "", new Cout(0, Ressource.Minerai), null, "");
     
     // Un joueur avec le colosse de Rhodes doit pouvoir jouer Bains
-    assertNotNull(botService.getCoutTotal(partie, partie.getJoueur(0), carte));
+    assertNotNull(botService.getCoutTotal(partie, partie.getJoueur(1), carte));
   }
 }

@@ -9,22 +9,16 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.request.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
-import fr.mathieujjava.sevenwonders.Action;
-import fr.mathieujjava.sevenwonders.Carte;
 import fr.mathieujjava.sevenwonders.Joueur;
 import fr.mathieujjava.sevenwonders.Partie;
 import fr.mathieujjava.sevenwonders.PartieManager;
-import fr.mathieujjava.sevenwonders.bean.PartieBean;
-import fr.mathieujjava.sevenwonders.enums.TypeAction;
 import fr.mathieujjava.sevenwonders.form.ActionForm;
 import fr.mathieujjava.sevenwonders.form.PartieForm;
 
@@ -50,7 +44,6 @@ public class HomeController {
   @ModelAttribute("actionForm")
   public ActionForm initActionForm(){
     ActionForm actionForm = new ActionForm();
-    actionForm.setTypeAction(TypeAction.Defausse);
     return actionForm;
   }
   /**

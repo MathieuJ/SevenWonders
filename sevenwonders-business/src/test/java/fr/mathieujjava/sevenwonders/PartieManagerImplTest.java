@@ -45,20 +45,20 @@ public class PartieManagerImplTest {
     partie.addJoueur(joueurC = new Joueur(merveilleA, true));
     partie.addJoueur(joueurD = new Joueur(merveilleA, true));
     joueurA.getMain().add(carteScierie = new Carte(TypeCarte.MatierePremiere, "Sawmill", "Scierie", new Cout(1), null, "Fournit 2 bois"));
-    joueurA.getMain().add(new Carte(TypeCarte.Science, "Library", "Bibliothèque", new Cout(0, Ressource.Pierre, Ressource.Pierre, Ressource.Tissu), null, "Ecriture"));
-    carteUniversite = new Carte(TypeCarte.Science, "University", "Université", new Cout(0, Ressource.Bois, Ressource.Bois, Ressource.Papyrus, Ressource.Verre), null, "Ecriture");
+    joueurA.getMain().add(new Carte(TypeCarte.Science, "Library", "BibliothÃ¨que", new Cout(0, Ressource.Pierre, Ressource.Pierre, Ressource.Tissu), null, "Ecriture"));
+    carteUniversite = new Carte(TypeCarte.Science, "University", "UniversitÃ©", new Cout(0, Ressource.Bois, Ressource.Bois, Ressource.Papyrus, Ressource.Verre), null, "Ecriture");
   }
 
   @Test
   public void testDefausseReussie() throws Exception {
     Action action = new Action(joueurA, TypeAction.Defausse, carteScierie);
     
-    // on vérifie la configuration de départ
+    // on vï¿½rifie la configuration de dï¿½part
     assertEquals(0, partie.getDefausse().size());
     assertEquals(3, joueurA.getNombrePieces().intValue());
     assertEquals(2, joueurA.getMain().size());
     partieManager.effectueAction(partie, action);
-    // le joueur gagne 3 pièces, et met une carte en défausse
+    // le joueur gagne 3 piï¿½ces, et met une carte en dï¿½fausse
     assertEquals(6, joueurA.getNombrePieces().intValue());
     assertEquals(1, partie.getDefausse().size());
     assertEquals(carteScierie, partie.getDefausse().get(0));
@@ -98,7 +98,7 @@ public class PartieManagerImplTest {
   
   @Test
   public void testPaieCout4() throws Exception {
-    // 10 pièces en tout
+    // 10 piï¿½ces en tout
     joueurA.modifieNombrePieces(7);
     ChoixAchatRessources choix = new ChoixAchatRessources();
     choix.setPiecesPourDroite(2);

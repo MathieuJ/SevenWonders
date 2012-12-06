@@ -11,7 +11,6 @@ public class Cout {
   private Integer prix = 0;
 
   public Cout(String sCout) {
-    System.out.println("ON FAIT : " + sCout);
     for (char c : sCout.toCharArray()) {
       switch (c) {
       case '1':

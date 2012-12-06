@@ -29,7 +29,7 @@ public class BotServiceImpl implements BotService {
     return null;
   }
 
-  // pondère une liste de cartes
+  // pondï¿½re une liste de cartes
   public int getPonderationCarte(Partie partie, Joueur joueur,
       Carte carte) {
     int ponderation = 0;
@@ -66,10 +66,10 @@ public class BotServiceImpl implements BotService {
           }
           // Tout sauf minerai
           // Militaire, mais pas plus de 2
-          // 1er étage de merveille
+          // 1er ï¿½tage de merveille
           break;
         case 2:
-          // 2eme étage de merveille au moins
+          // 2eme ï¿½tage de merveille au moins
           if (isCarteDans(carte, new String[] { "Foundry", "Forum",
               "Caravansary", "Stables", "Courthouse", "Training Ground" })) {
             ponderation += 5;
@@ -219,7 +219,7 @@ public class BotServiceImpl implements BotService {
       case 7:
         switch (partie.getAge()) {
         case 1:
-          // Raw Materials – prioritize wood and stone,
+          // Raw Materials ï¿½ prioritize wood and stone,
           // leave with one ore
           // Manufactured Resources
           // Baths
@@ -254,7 +254,7 @@ public class BotServiceImpl implements BotService {
       System.out.print(puissanceCarte + " " + puissanceSoi + " "
           + puissanceGauche + " " + puissanceDroite);
       if ((puissanceSoi > puissanceDroite) && (puissanceSoi > puissanceGauche)) {
-        System.out.println("____________ pas besoin d'armée chuis trop fort");
+        System.out.println("____________ pas besoin d'armÃ©e chuis trop fort");
         ponderation += 1;
       } else if ((puissanceSoi + puissanceCarte < puissanceDroite)
           && (puissanceSoi + puissanceCarte < puissanceGauche)) {
@@ -264,7 +264,7 @@ public class BotServiceImpl implements BotService {
       } else if ((puissanceSoi < puissanceDroite && puissanceSoi
           + puissanceCarte > puissanceDroite)
           || (puissanceSoi < puissanceGauche && puissanceSoi + puissanceCarte > puissanceGauche)) {
-        System.out.println("____________ ça peut me bosster et les dépasser");
+        System.out.println("____________ ca peut me bosster et les dÃ©passer");
         ponderation += 4;
       } else {
         System.out.println("____________ bof");

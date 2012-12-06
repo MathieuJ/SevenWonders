@@ -81,7 +81,7 @@ public class PartieManagerImpl implements PartieManager {
     case Merveille:
       joueur.getMain().remove(action.getCarte());
       if (joueur.getEtageMerveille() == 3)
-        throw new Exception("Le joueur a déjà tout construit");
+        throw new Exception("Le joueur a dï¿½jï¿½ tout construit");
       paieCout(partie, joueur, action.getChoixAchatRessources());
       joueur.setEtageMerveille(joueur.getEtageMerveille() + 1);
       break;
@@ -223,7 +223,7 @@ public class PartieManagerImpl implements PartieManager {
         }
       }
 
-      // Si 2eme étage Babylone, on rajoute la science la plus basse.
+      // Si 2eme ï¿½tage Babylone, on rajoute la science la plus basse.
       if (joueur.getEtageMerveille() >= 2
           && "The Hanging Gardens of Babylon".equals(joueur.getMerveille())) {
         if (nbMath > nbInge) {
@@ -420,7 +420,7 @@ public class PartieManagerImpl implements PartieManager {
       switch (action.getTypeAction()) {
       case Defausse:
         System.out.println(joueur.getPlace() + " a " + joueur.getMain()
-            + " ; il défausse " + action.getCarte());
+            + " ; il dÃ©fausse " + action.getCarte());
         joueur.getMain().remove(action.getCarte());
         joueur.modifieNombrePieces(3);
         partie.getDefausse().add(action.getCarte());
@@ -432,14 +432,14 @@ public class PartieManagerImpl implements PartieManager {
         if (action.getChoixAchatRessources().getPiecesPourDroite() != 0) {
           System.out.println("Il file "
               + action.getChoixAchatRessources().getPiecesPourDroite()
-              + " à droite");
+              + " Ã  droite");
           partie.getVoisinDroite(joueur).modifieNombrePieces(
               action.getChoixAchatRessources().getPiecesPourDroite());
         }
         if (action.getChoixAchatRessources().getPiecesPourGauche() != 0) {
           System.out.println("Il file "
               + action.getChoixAchatRessources().getPiecesPourGauche()
-              + " à gauche");
+              + " Ã  gauche");
           partie.getVoisinGauche(joueur).modifieNombrePieces(
               action.getChoixAchatRessources().getPiecesPourGauche());
         }
@@ -454,7 +454,7 @@ public class PartieManagerImpl implements PartieManager {
         break;
       case Merveille:
         System.out.println(joueur.getPlace() + " a " + joueur.getMain()
-            + " ; il construit un étage avec [" + action.getCarte().getNomFr()
+            + " ; il construit un ï¿½tage avec [" + action.getCarte().getNomFr()
             + "]");
         joueur.getMain().remove(action.getCarte());
         joueur.setEtageMerveille(joueur.getEtageMerveille() + 1);
