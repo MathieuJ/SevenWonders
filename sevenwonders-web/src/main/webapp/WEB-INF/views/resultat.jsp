@@ -45,6 +45,29 @@
 				</TR>
 			</c:forEach>
 			</table>
+			
+			<c:forEach items="${partie.listeJoueurs}" var="joueur">
+			<h1>Joueur : ${joueur.getPlace()}</h1>
+			<c:set var="merveille" value="${joueur.merveille}" scope="request" />
+					<c:set var="joueur" value="${joueur}" scope="request" />
+					<jsp:include page="composant/merveille.jsp" />
+					<div> 
+					<c:if test="${joueur.nombrePieces > 0}">
+					<c:forEach var="entry" begin="1" end="${joueur.nombrePieces}">
+						<img src="img/piece.jpg" height="16px" width="16px"/>
+					</c:forEach>
+					</c:if>
+					</div>
+					<c:forEach items="${joueur.listeMedailles}" var="medaille">
+						${medaille}
+					</c:forEach>
+					<div class="row planjoueur">
+						<c:forEach items="${joueur.listeCartes}" var="carte">
+							<c:set var="carte" value="${carte}" scope="request" />
+							<jsp:include page="composant/carte.jsp" />
+						</c:forEach>
+					</div>
+					</c:forEach>
 		</div>
 
 

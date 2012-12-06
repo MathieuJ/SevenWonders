@@ -27,17 +27,34 @@ function selectionneCarte(numCarte) {
 		<div class="row" style="width:4000px">
 			<c:forEach items="${partie.listeJoueurs}" var="joueur">
 				<div class="span6">
+					
+					
+					<c:set var="merveille" value="${joueur.merveille}" scope="request" />
+					<c:set var="joueur" value="${joueur}" scope="request" />
+					<jsp:include page="composant/merveille.jsp" />
+					<div> 
+					<c:if test="${joueur.nombrePieces > 0}">
+					<c:forEach var="entry" begin="1" end="${joueur.nombrePieces}">
+						<img src="img/piece.jpg" height="16px" width="16px"/>
+					</c:forEach>
+					</c:if>
+					</div>
+					<c:forEach items="${joueur.listeMedailles}" var="medaille">
+						${medaille}
+					</c:forEach>
+					<div class="row planjoueur">
+						<c:forEach items="${joueur.listeCartes}" var="carte">
+							<c:set var="carte" value="${carte}" scope="request" />
+							<jsp:include page="composant/carte.jsp" />
+						</c:forEach>
+					</div>
+					
 					<c:if test="${!joueur.isBot()}">
 						<form:form commandName="actionForm" method="post"
 							action="partie.action">
 							<form:errors />
 							<form:errors path="numCarte" />
-							<form:select path="typeAction" id="typeAction">
-								<form:option value="Joue">Joue une carte</form:option>
-								<form:option value="Defausse">Défausse</form:option>
-								<form:option value="Merveille">Merveille</form:option>
-								<form:option value="Special">Pouvoir spécial</form:option>
-							</form:select>
+							
 							<div class="merveille">
 								<c:forEach items="${joueur.main}" var="carte" varStatus="status">
 									<c:set var="carte" value="${carte}" scope="request" />
@@ -49,23 +66,12 @@ function selectionneCarte(numCarte) {
 								</c:forEach>
 							</div>
 							<form:hidden class="numCarte" path="numCarte" id="numCarte" value="0"/>
-							<input type="submit" name="save" value="Effectuer l'action" />
+							<input type="submit" name="joue" value="Jouer" />
+							<input type="submit" name="defausse" value="Défausser" />
+							<input type="submit" name="merveille" value="Merveille" />
+							<input type="submit" name="special" value="Spécial" />
 						</form:form>
 					</c:if>
-					
-					<c:set var="merveille" value="${joueur.merveille}" scope="request" />
-					<c:set var="joueur" value="${joueur}" scope="request" />
-					<jsp:include page="composant/merveille.jsp" />
-					<div>Plan joueur : ${joueur.nombrePieces} Pièces d'or</div>
-					<c:forEach items="${joueur.listeMedailles}" var="medaille">
-						${medaille}
-					</c:forEach>
-					<div class="row planjoueur">
-						<c:forEach items="${joueur.listeCartes}" var="carte">
-							<c:set var="carte" value="${carte}" scope="request" />
-							<jsp:include page="composant/carte.jsp" />
-						</c:forEach>
-					</div>
 					
 				</div>
 
