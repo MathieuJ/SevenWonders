@@ -67,8 +67,8 @@
 	border-radius: 7px;
 }
 
-.carte selected {
-	background-color: black;
+.selected .carte {
+	border:2px solid red;
 }
 
 .carte hr {
