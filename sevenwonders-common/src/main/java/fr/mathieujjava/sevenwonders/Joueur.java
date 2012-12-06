@@ -124,5 +124,9 @@ public class Joueur {
   public void setBot(Boolean bot) {
     this.bot = bot;
   }
+
+  public void setMerveille(Merveille merveille) {
+    this.merveille = merveille;
+  }
   
 }

@@ -1,6 +1,7 @@
 package fr.mathieujjava.sevenwonders;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -9,14 +10,11 @@ import javax.annotation.Resource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import fr.mathieujjava.sevenwonders.enums.Medaille;
 import fr.mathieujjava.sevenwonders.enums.Ressource;
-import fr.mathieujjava.sevenwonders.enums.TypeAction;
 import fr.mathieujjava.sevenwonders.enums.TypeCarte;
 
 
@@ -32,6 +30,8 @@ public class BotServiceImplTest {
   @Autowired 
   private PartieManager partieManager;
   
+  @Autowired 
+  private BotService botService;
   
   @Before
   public void setUp() {
@@ -40,7 +40,12 @@ public class BotServiceImplTest {
   }
 
   @Test
-  public void test1() {
-    System.out.println(partie);
+  public void testPaiementBasique() {
+    partie.getJoueur(1).setMerveille(listeMerveilles.get(0));
+    assertEquals(partie.getJoueur(0).getMerveille().getId(), new Integer(1));
+    Carte carte = new Carte(TypeCarte.Civil, "caserne", "", new Cout(0, Ressource.Minerai), null, "");
+    
+    // Un joueur avec le colosse de Rhodes doit pouvoir jouer Bains
+    assertNotNull(botService.getCoutTotal(partie, partie.getJoueur(0), carte));
   }
 }

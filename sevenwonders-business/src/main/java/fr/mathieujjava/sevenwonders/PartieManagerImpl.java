@@ -1,6 +1,7 @@
 package fr.mathieujjava.sevenwonders;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -149,9 +150,11 @@ public class PartieManagerImpl implements PartieManager {
     return puissance;
   }
 
-  public int[] comptePoints(Partie partie) {
-    int[] resultat = new int[partie.getNbJoueurs() * 8];
+  public HashMap<Joueur, List<Integer>> comptePoints(Partie partie) {
+    HashMap<Joueur, List<Integer>> resultatX = new HashMap<Joueur, List<Integer>>();
+    //int[] resultat = new int[partie.getNbJoueurs() * 8];
     for (Joueur joueur : partie.getListeJoueurs()) {
+      List<Integer> listePoints = new ArrayList<Integer>();
       int points;
       int total = 0;
       // Decompte des victoires militaires
@@ -159,11 +162,11 @@ public class PartieManagerImpl implements PartieManager {
       for (Medaille medaille : joueur.getListeMedailles()) {
         points += medaille.getValeur();
       }
-      resultat[joueur.getPlace() * 8] = points;
+      listePoints.add(points);
       total += points;
 
       // Contenu du tresor
-      resultat[joueur.getPlace() * 8 + 1] = joueur.getNombrePieces() / 3;
+      listePoints.add(joueur.getNombrePieces() / 3);
       total += joueur.getNombrePieces() / 3;
 
       // Merveille
@@ -180,7 +183,7 @@ public class PartieManagerImpl implements PartieManager {
       if (joueur.getEtageMerveille() == 3) {
         points += 7;
       }
-      resultat[joueur.getPlace() * 8 + 2] = points;
+      listePoints.add(points);
       total += points;
 
       // Batiments civils
@@ -189,7 +192,7 @@ public class PartieManagerImpl implements PartieManager {
 
         points += new Integer(carte.getTexte().substring(0, 1));
       }
-      resultat[joueur.getPlace() * 8 + 3] = points;
+      listePoints.add(points);
       total += points;
 
       // Decompte des victoires science
@@ -248,7 +251,8 @@ public class PartieManagerImpl implements PartieManager {
 
       points += 7 * nbLigne;
 
-      resultat[joueur.getPlace() * 8 + 4] = points;
+      listePoints.add(points);
+//resultat[joueur.getPlace() * 8 + 4] = points;
       total += points;
 
       // Batiments commerciaux
@@ -270,7 +274,8 @@ public class PartieManagerImpl implements PartieManager {
 
       }
       // System.out.println("commerce " + points);
-      resultat[joueur.getPlace() * 8 + 5] = points;
+      listePoints.add(points);
+//    resultat[joueur.getPlace() * 8 + 5] = points;
       total += points;
 
       // Guildes :
@@ -322,15 +327,17 @@ public class PartieManagerImpl implements PartieManager {
               + partie.getVoisinGauche(joueur).getEtageMerveille();
         }
       }
-      resultat[joueur.getPlace() * 8 + 6] = points;
+      listePoints.add(points);
+//    resultat[joueur.getPlace() * 8 + 6] = points;
       total += points;
 
       // Total
-      resultat[joueur.getPlace() * 8 + 7] = total;
+      listePoints.add(total);
+//    resultat[joueur.getPlace() * 8 + 7] = total;
       // System.out.println("total " + total);
-
+      resultatX.put(joueur, listePoints);
     }
-    return resultat;
+    return resultatX;
   }
 
   protected List<Carte> getCartes(Integer age, Integer nombreJoueurs) {
@@ -355,7 +362,11 @@ public class PartieManagerImpl implements PartieManager {
       }
     }
     if (age == 3) {
-      List<Carte> listGuildes = listeCartesGuilde;
+      // on recopie la liste des cartes de guilde car on ne peut se permettre de la modifier.
+      List<Carte> listGuildes = new ArrayList<Carte>();
+      for (Carte carte : listeCartesGuilde) {
+        listGuildes.add(carte);
+      }
       for (int i = 0; i < nombreJoueurs + 2; i++) {
         tasCartes.add(listGuildes.remove((int) (Math.random() * i)));
       }
@@ -495,7 +506,7 @@ public class PartieManagerImpl implements PartieManager {
   @Override
   public void finitTour(Partie partie) {
     partie.incrementeTour();
-    if (partie.getTour() == 8) {
+    if (partie.getTour() == 7) {
       donneMedaillesMilitaires(partie);
       partie.setAge(partie.getAge() + 1);
       partie.setTour(1);
@@ -503,7 +514,9 @@ public class PartieManagerImpl implements PartieManager {
         partie.getDefausse().addAll(joueur.getMain());
         joueur.getMain().clear();
       }
-      distribueCartes(partie);
+      if (partie.getAge() < 4) {
+        distribueCartes(partie);
+      }
     }
     if (partie.getAge() == 2) {
       partie.rotationCartes(false);

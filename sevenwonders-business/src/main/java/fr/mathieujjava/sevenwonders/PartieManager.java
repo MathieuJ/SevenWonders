@@ -1,5 +1,8 @@
 package fr.mathieujjava.sevenwonders;
 
+import java.util.HashMap;
+import java.util.List;
+
 import fr.mathieujjava.sevenwonders.enums.TypeCarte;
 
 public interface PartieManager {
@@ -11,7 +14,7 @@ public interface PartieManager {
   
   public int calculePuissanceMilitaire(Partie partie, Joueur joueur);
   
-  public int[] comptePoints(Partie partie);
+  public HashMap<Joueur, List<Integer>> comptePoints(Partie partie);
 
   public void initPartie(Partie partie, Integer nombreJoueurs);
   

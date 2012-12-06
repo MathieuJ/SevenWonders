@@ -121,4 +121,15 @@ public class Cout {
     return cout;
   }
 
+  public String getCoutCourt() {
+    String res = "";
+    if (prix != 0) {
+      res = "" + prix;
+    }
+    for (Ressource ressource : getListeRessources()) {
+      res += ressource.getSymbole();
+    }
+    return res;
+  }
+
 }

@@ -431,7 +431,7 @@ public class BotServiceImpl implements BotService {
     // System.out.println("\nRecursive 0" + " " +
     // carteATester.getCout().toString() + " " + listeRecRessCarte.size());
     List<ChoixAchatRessources> listeResultat = recursivePaiement(
-        coutATester.toString(), listeRecRessCarte, 0,
+        coutATester.getCoutCourt(), listeRecRessCarte, 0,
         new ChoixAchatRessources());
 
     ChoixAchatRessources resultatFinal = null;
@@ -461,11 +461,6 @@ public class BotServiceImpl implements BotService {
     }
     // System.out.println("\n\n");
     return resultatFinal;
-  }
-
-  private int getCout(Partie partie, Joueur joueur, ChoixAchatRessources resultat) {
-
-    return 0;
   }
 
   private List<ChoixAchatRessources> recursivePaiement(String coutCourt,

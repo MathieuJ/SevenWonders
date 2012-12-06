@@ -21,8 +21,5 @@ public class MerveilleTest {
         "Le Colosse de Rhodes", 1, "CC", Ressource.Minerai, "1,1,2", "colosse.jpg");
     assertNotNull(merveille);
     assertNotNull(merveille.getCoutAge(3));
-    
-
-
   }
 }

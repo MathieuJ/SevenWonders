@@ -1,5 +1,8 @@
 package fr.mathieujjava.sevenwonders.controller;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -44,7 +47,7 @@ public class PartieController {
   public ActionForm initActionForm() {
     logger.debug("INIT Action FORM");
     ActionForm actionForm = new ActionForm();
-    actionForm.setTypeAction(TypeAction.Defausse);
+    actionForm.setTypeAction(TypeAction.Joue);
     return actionForm;
   }
 
@@ -65,19 +68,32 @@ public class PartieController {
       errors.reject("numCarte", "blabla");
       return new ModelAndView("partie", "partie", partie);
     }
-    ChoixAchatRessources car = botService.getCoutTotal(partie, joueur, carte);
-    if (car != null) {
+    ChoixAchatRessources car = null;
+    if (typeAction == TypeAction.Joue || typeAction == TypeAction.Merveille) {
+      car = botService.getCoutTotal(partie, joueur, carte);
+    }
+    if (typeAction == TypeAction.Defausse || typeAction == TypeAction.Special || car != null) {
       Action actionJoueur = new Action(joueur, typeAction, carte, car);
       logger.debug("Action : " + actionJoueur);
       logger.debug("Partie avant : " + partie);
       partieManager.effectueActionJoueurEtBots(partie, actionJoueur);
-      partie.rotationCartes(true);
-      partie.incrementeTour();
+      partieManager.finitTour(partie);
+      //partie.rotationCartes(true);
+      //partie.incrementeTour();
     } else {
+      logger.error("____________Pas possible de jouer cette carte");
       errors.reject("numCarte", "blabla");
     }
     logger.debug("Partie après : " + partie);
-    return new ModelAndView("partie", "partie", partie);
+    if (partie.getAge() == 4) {
+      ModelAndView mav = new ModelAndView("resultat", "partie", partie);
+      HashMap<Joueur, List<Integer>> resultat = partieManager.comptePoints(partie);
+      
+      mav.addObject("resultat", resultat);
+      return mav;
+    } else {
+      return new ModelAndView("partie", "partie", partie);
+    }
   }
 
 }
